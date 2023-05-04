@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Condicionais</title>
+    <title>Condicionais versão 2</title>
     <style>
         .normal{
             background-color: lightgreen;
@@ -32,17 +32,22 @@
 </head>
 <body>
 
-    <h1>Condicionais</h1>
+    <h1>Condicionais versão 2</h1>
     <hr>
 
     <h2>Simples</h2>
+
 <?php
 /* Essa condicional só tem if */
 $numero = 10;
 if($numero >= 5){
-    echo "<p>$numero é maior/igual a 5</p>";
-}
 ?>
+  <p><?=$numero?> é maior/igual a 5</p>
+<?php
+}
+?> 
+<!-- Separamos o que é php do html, basicamente isolamos o início do if, depois isolamos o "html", colocando o que é do php no bloquinho, e depois isolamos a chave -->
+
 
     <h2>Composta</h2>
 <?php
@@ -50,17 +55,30 @@ if($numero >= 5){
 $produto = "Ultrabook";
 $qtdEmEstoque = 10; // o que temos no momento
 $qtdCritica = 5; // mínimio necessário
+?>
+<h3>Produto: <?=$produto?></h3>
+<h4>Estoque: <?=$qtdEmEstoque?></h4>
 
-echo "<h3>Produto: $produto</h3>";
-echo "<h3>Estoque: $qtdEmEstoque</h3>";
+<?php
 if($qtdEmEstoque < $qtdCritica){
-    echo "<p class='repor'> É necessário comprar/repor.</p>";
+?>
 
+    <p class="repor"> É necessário comprar/repor.</p>
+
+<?php
     if($qtdEmEstoque == 0){
-        echo "<p><span class='urgente'>URGENTE!</span></p>";
+?>
+
+    <p><span class="urgente">URGENTE!</span></p>
+
+<?php
     }
 } else {
-    echo "<p class='normal'>Estoque normal.</p>";
+?>
+
+    <p class="normal">Estoque normal.</p>
+
+<?php
 }
 ?>
 
@@ -84,9 +102,9 @@ switch($produto){
     case "TV" : $garantia = 2; break;
     default : $garantia = 1; break;
 }
-
-echo "<p>O $produto tem garantia de $garantia ano(s).</p>";
 ?>
+<p>O <?=$produto?> tem garantia de <?=$garantia?> ano(s).</p>
+
 
 </body>
 </html>
