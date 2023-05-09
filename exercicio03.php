@@ -23,8 +23,8 @@ if($salario < 1500){
 }
 ?>
 
-<p>Salário antes do reajuste: <?=$salario?></p>
-<p>Salário depois do reajuste: <?=$novoSalario?></p>
+<p>Salário antes do reajuste: R$ <?=number_format($salario, 2, ",",".")?> | Salário depois do reajuste: R$ <?=number_format($novoSalario, 2, ",",".")?></p>
+
 
 </body>
 </html>
